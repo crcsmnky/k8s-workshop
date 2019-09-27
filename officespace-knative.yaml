@@ -1,0 +1,46 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: compute-transaction
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: gcr.io/crcsmnky/compute-transaction-firestore:latest
+---
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: transaction-generator
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: gcr.io/crcsmnky/transaction-generator-firestore:latest
+          env:
+            - name: COMPUTE_API
+              value: "http://compute-transaction.default"
+---
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: bank-holdings
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: gcr.io/crcsmnky/bank-holdings-firestore:latest
+---
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: account-balance
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: gcr.io/crcsmnky/account-balance-firestore:latest
