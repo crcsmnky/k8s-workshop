@@ -124,9 +124,9 @@ kubectl apply -f hipstershop-kubernetes.yaml
 
 ## Usage
 
-Check out monitoring, logging, and tracing using Istio and Stackdriver [link](https://github.com/GoogleCloudPlatform/istio-samples/tree/master/istio-stackdriver/)
+- Check out monitoring, logging, and tracing using Istio and Stackdriver ([link](https://github.com/GoogleCloudPlatform/istio-samples/tree/master/istio-stackdriver/))
 
-Generate transactions, check bank holdings, and check the account balance using the Office Space app [link](https://github.com/crcsmnky/cloud-run-office-space#usage)
+- Generate transactions, check bank holdings, and check the account balance using the Office Space app ([link](https://github.com/crcsmnky/cloud-run-office-space#usage))
 
 ## Cleanup
 
